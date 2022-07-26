@@ -33,9 +33,9 @@ class DataSource {
             0.0..0.3 // lower bound must be >= 0.0, upper bound must be > lower bound
         val highWaitTimeRange: ClosedRange<Double> =
             1.0..2.0 // lower bound must be >= 0.0, upper bound must be > lower bound
-        const val errorProbability = 0.15 // must be > 0.0
+        const val errorProbability = 0.20 // must be > 0.0
         const val backendBugTriggerProbability = 0.05 // must be > 0.0
-        const val emptyFirstResultsProbability = 0.15 // must be > 0.0
+        const val emptyFirstResultsProbability = 0.05 // must be > 0.0
     }
 
     init {

@@ -1,5 +1,6 @@
 package com.sn.pagination.util
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.view.isVisible
@@ -36,6 +37,7 @@ class PagingLoadStateAdapter<T : Any, VH : RecyclerView.ViewHolder>(
 
         fun bind(loadState: LoadState) {
             with(binding) {
+                Log.d("deneme", (loadState is LoadState.Error).toString())
                 progressBar.isVisible = loadState is LoadState.Loading
                 retryButton.isVisible = loadState is LoadState.Error
                 errorMsg.isVisible =

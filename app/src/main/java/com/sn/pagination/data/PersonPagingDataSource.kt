@@ -14,7 +14,10 @@ class PersonPagingDataSource(
 
             val result = source.fetch(pageNumber)
             data = result.first
-            pageNumber = data?.next
+
+            data?.next.let {
+                pageNumber = it
+            }
 
             result.second?.errorDescription?.let { ex ->
                 throw Exception(ex)

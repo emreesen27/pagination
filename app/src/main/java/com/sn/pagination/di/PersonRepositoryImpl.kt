@@ -18,7 +18,7 @@ class PersonRepositoryImp @Inject constructor(
     }
 
     override suspend fun getPerson(): Flow<PagingData<Person>> = Pager(
-        config = PagingConfig(pageSize = 5, prefetchDistance = 2, initialLoadSize = 10),
+        config = PagingConfig(pageSize = 20, prefetchDistance = 2),
         initialKey = null,
         pagingSourceFactory = { PersonPagingDataSource(source) }
     ).flow.map {
